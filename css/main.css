@@ -1,24 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
-/* Remove the navbar's default rounded borders and increase the bottom margin */ 
-    .navbar {
-      margin-bottom: 50px;
-      border-radius: 0;
-    }
-    
-    /* Remove the jumbotron's default bottom margin */ 
-     .jumbotron {
-      margin-bottom: 0;
-    }
-   
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
-
-
-/****** LOGIN MODAL ******/
+/*-------------------------------------------------------------------------LOGIN MODAL*/
 .loginmodal-container {
   padding: 30px;
   max-width: 350px;
@@ -113,15 +95,44 @@
   font-size: 12px;
 }
 
-/********** Main Page Style **********/
+/*-------------------------------------------------------------------------NAVBAR*/
+.navbar {
+  margin-bottom: 50px;
+  border-radius: 0;
+}
 
+.navbar-right {
+  margin-right: 20px;
+}
+/*-------------------------------------------------------------------------HEADER*/
+.jumbotron {
+  background-color: #454;
+  color: grey;
+  margin-bottom: 0;
+}
 
+/*-------------------------------------------------------------------------BODY*/
+body {
+  background-color: #454;
+}
 
+.panel-body {
+  background-color: white;
+}
 
+.panel-heading {
+  background-color: red;
+}
 
-
-
-
+.panel-footer {
+  background-color: grey;
+}
+/*-------------------------------------------------------------------------FOOTER*/  
+.footer {
+  background-color: #454; 
+  color: grey;   
+  margin-bottom: 0px;
+}
 
 
 
