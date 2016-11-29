@@ -1,0 +1,29 @@
+label {
+    display: block;
+    background: #f00;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    transition: all .5s;
+}
+
+input:checked + label {
+    width: 95%;
+    height: 95%;
+    top: 2.5%;
+    margin-top: 0;
+    left: 2.5%;
+    margin-left: 0;
+    border-radius: 2.5%;
+    background: #0f0;
+}
+
+input {
+   visibility: hidden;
+   position: absolute;
+}
