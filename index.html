@@ -1,16 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Max Moulds Example Website demonstrating elements of a website">
+    <meta name="keywords" content="maxmoulds,template,website,developer,html5,css3,oregon,programmer,HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Max Moulds">    
   
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<script src="./js/autohidingnavbar.js"></script>
+   
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    
+    
+    
 </head>
 <body>
 
+    
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="nav-container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Diver's Cove</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a>
+                    </li>
+                    <li><a href="#about">About</a>
+                    </li>
+                    <li><a href="#contact">Contact</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Restaurant <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Something</a>
+                            </li>
+                            <li><a href="#">Else</a>
+                            </li>
+                            <li><a href="#">Specials</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Services and Events</li>
+                            <li><a href="#">Catering</a>
+                            </li>
+                            <li><a href="#">To-Go</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotel <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Bookings</a>
+                            </li>
+                            <li><a href="#">Amenities</a>
+                            </li>
+                            <li><a href="#">Airport Service</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Concierge</li>
+                            <li><a href="#">Entertainment</a>
+                            </li>
+                            <li><a href="#">Restaurants</a>
+                            </li>
+                            <li><a href="#">Activities</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>    
+    
+    
 <div class="jumbotron">
   <div class="container text-center">
     <h1>Online Store</h1>      
@@ -96,13 +179,40 @@
   </div>
 </div><br><br>
 
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Login to Your Account</h1><br>
+				  <form>
+					<input type="text" name="user" placeholder="Username">
+					<input type="password" name="pass" placeholder="Password">
+					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+				  </form>
+					
+				  <div class="login-help">
+					<a href="#">Register</a> - <a href="#">Forgot Password</a>
+				  </div>
+				</div>
+			</div>
+		  </div>
+
 <footer class="container-fluid text-center">
   <p>Online Store Copyright</p>  
   <form class="form-inline">Get deals:
     <input type="email" class="form-control" size="50" placeholder="Email Address">
     <button type="button" class="btn btn-danger">Sign Up</button>
   </form>
+    
+    
+    
 </footer>
 
-</body>
+    
+    </body>
 </html>
+    <script>
+        $(document).ready(function() {
+            $("div.navbar-fixed-top").autoHidingNavbar().autoHidingNavbar('setShowOnBottom', false);
+        });
+    </script>   
