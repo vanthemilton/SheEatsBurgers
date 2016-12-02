@@ -107,7 +107,7 @@
 /*-------------------------------------------------------------------------HEADER*/
 .jumbotron {
   background-color: #454;
-  color: grey;
+  color: #999;
   margin-bottom: 0;
 }
 
@@ -130,7 +130,7 @@ body {
 /*-------------------------------------------------------------------------FOOTER*/  
 .footer {
   background-color: #454; 
-  color: grey;   
+  color: #999;   
   margin-bottom: 0px;
 }
 
