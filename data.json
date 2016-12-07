@@ -1,0 +1,3 @@
+{ "_id" : { "$oid" : "584780a471e917cfe8d84a8a" }, "title" : "please work", "description" : "mongodb" }
+{ "_id" : { "$oid" : "5847814271e917cfe8d84a8b" }, "title" : "blsh", "description" : "blah" }
+{ "_id" : { "$oid" : "584781b15b619ef2d98c0026" }, "title" : "blsh", "description" : "blahtwo", "author" : "satan aka jorge" }
