@@ -18,7 +18,7 @@ _MONGO_DB=sheeatsburgers
 _MONGO_COLLECTION=sheeatsburgers
 _MONGO_USER=sheeatsburgers
 _MONGO_PASS=sheeatsburgers
-_MONGO_INIT_DATA=/home/max/Downloads/cs290/final-project-team-kag/data.json
+_MONGO_INIT_DATA=/Users/dudeman/Documents/CS290/final/data.json
 
 #teset is ioen
 mongoimport --db $_MONGO_DB --collection $_MONGO_COLLECTION  --drop --file $_MONGO_INIT_DATA

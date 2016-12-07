@@ -19,9 +19,9 @@ MongoClient.connect(url, function (err, db) {
     var collection = db.collection('sheeatsburgers');
 
     //Create some users
-    var user1 = {name: 'modulus admin', age: 42, roles: ['admin', 'moderator', 'user']};
-    var user2 = {name: 'modulus user', age: 22, roles: ['user']};
-    var user3 = {name: 'modulus super admin', age: 92, roles: ['super-admin', 'admin', 'moderator', 'user']};
+    var user1 = {title: 'test 1', description: 'yo test 1 mic check', author: 'yo dog'};
+    var user2 = {title: 'test 2', description: 'biscuits and gravy', author: 'good eattin'};
+    var user3 = {title: 'test 3', description: 'happy day', author: 'happy man'};
 
     // Insert some users
     collection.insert([user1, user2, user3], function (err, result) {
