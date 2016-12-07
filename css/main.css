@@ -65,7 +65,7 @@
   /* border: 1px solid #3079ed; */
   border: 0px;
   color: #fff;
-  text-shadow: 0 1px rgba(0,0,0,0.1); 
+  text-shadow: 0 1px rgba(0,0,0,0.1);
   background-color: #4d90fe;
   padding: 17px 0px;
   font-family: roboto;
@@ -89,11 +89,24 @@
   display: inline-block;
   opacity: 0.6;
   transition: opacity ease 0.5s;
-} 
+}
 
 .login-help{
   font-size: 12px;
 }
+
+#thread-modal .modal {
+  height: 100%;
+}
+
+#thread-modal .modal-dialog {
+  width: 90%;
+}
+
+#thread-modal .modal-body {
+  height: 75vh;
+}
+
 
 /*-------------------------------------------------------------------------NAVBAR*/
 .navbar {
@@ -127,6 +140,7 @@ body {
 
 .panel-body {
   background-color: white;
+  height = 100%;
 }
 
 .panel-heading {
@@ -136,24 +150,10 @@ body {
 .panel-footer {
   background-color: grey;
 }
-/*-------------------------------------------------------------------------FOOTER*/  
+
+/*-------------------------------------------------------------------------FOOTER*/
 .footer {
-  background-color: #454; 
-  color: #999;   
+  background-color: #454;
+  color: #999;
   margin-bottom: 0px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
