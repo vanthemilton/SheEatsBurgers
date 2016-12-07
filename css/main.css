@@ -101,9 +101,14 @@
   border-radius: 0;
 }
 
+.navbar-center {
+  margin-right: 20px;
+}
+
 .navbar-right {
   margin-right: 20px;
 }
+
 /*-------------------------------------------------------------------------HEADER*/
 .jumbotron {
   background-color: #454;
@@ -116,12 +121,16 @@ body {
   background-color: #454;
 }
 
+.panel {
+  border-color: pink;
+}
+
 .panel-body {
   background-color: white;
 }
 
 .panel-heading {
-  background-color: red;
+  background-color: #999999;
 }
 
 .panel-footer {
