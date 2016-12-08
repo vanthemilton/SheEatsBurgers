@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 // Serve static files from public/.
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+var userOne;
 
 MongoClient.connect(mongoURL, function (err, db) {
   if (err) {
@@ -43,22 +43,24 @@ MongoClient.connect(mongoURL, function (err, db) {
     var collection = db.collection('sheeatsburgers');
 
     //Create some users
-    var user1 = {title: 'test 1', description: 'yo test 1 mic check', author: 'yo dog'};
-    var user2 = {title: 'test 2', description: 'biscuits and gravy', author: 'good eattin'};
-    var user3 = {title: 'test 3', description: 'happy day', author: 'happy man'};
+    //var user1 = {title: 'test 1', description: 'yo test 1 mic check', author: 'yo dog'};
+    //var user2 = {title: 'test 2', description: 'biscuits and gravy', author: 'good eattin'};
+    //var user3 = {title: 'test 3', description: 'happy day', author: 'happy man'};
 
     // Insert some users
-    collection.insert([user1, user2, user3], function (err, result) {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log('Inserted %d documents into the "users" collection. The documents inserted with "_id" are:', result.length, result);
-      }
+    //collection.insert([user1, user2, user3], function (err, result) {
+userONE = collection.find({title:"please work"})      
+//userONE = collection.find().sort({title:1}).limit(50);
+      //if (err) {
+      //  console.log(err);
+      //} else {
+      //  console.log('Inserted %d documents into the "users" collection. The documents inserted with "_id" are:', result.length, result);
+      //}
       //Close connection
-      console.log("db wat" + collection.find({title:"test 1"}));
-      db.close();
-    });
-    console.log("HERE ARE THE FIND");
+      //console.log("db wat" + collection.find({title:"test 1"}));
+      //db.close();
+    //});
+    console.log("HERE ARE THE FIND" + userONE);
   }
 });
 
@@ -69,7 +71,7 @@ MongoClient.connect(mongoURL, function (err, db) {
 // Render the index page for the root URL path ('/').
 app.get('/', function (req, res) {
   res.render('index-page', {
-    pageTitle: 'Welcome!'
+    pageTitle: userONE
   });
 });
 
