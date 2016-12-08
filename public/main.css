@@ -205,6 +205,7 @@ body {
   background-color: #454;
 }
 
+/*
 .panel {
   border-color: pink;
 }
@@ -217,9 +218,9 @@ body {
 .panel-heading {
   background-color: #999999;
 }
-
+*/
 .panel-footer {
-  background-color: grey;
+  border: 0px;
 }
 
 /*-------------------------------------------------------------------------FOOTER*/

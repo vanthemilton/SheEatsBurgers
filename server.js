@@ -54,7 +54,7 @@ MongoClient.connect(mongoURL, function (err, db) {
   titleColor: "red",
   bodyColor: "green",
   footerColor: "red",
-  borderolor: "yellow",
+  borderColor: "yellow",
   comments: ""
 };
     
@@ -65,25 +65,25 @@ MongoClient.connect(mongoURL, function (err, db) {
   titleColor: "green",
   bodyColor: "red",
   footerColor: "green",
-  borderolor: "pink",
+  borderColor: "pink",
   comments: ""
 };
 
     // Insert some users
-    collection.insert([user1, user2], function (err, result) {
+    //collection.insert([user1, user2], function (err, result) {
           
- //userONE = collection.find().sort({title:1}).limit(50);
-      if (err) {
-        console.log(err);
-      } else {
-        console.log('Inserted %d documents into the "users" collection. The documents inserted with "_id" are:', result.length, result);
-      }
+ // //userONE = collection.find().sort({title:1}).limit(50);
+      // if (err) {
+      //   console.log(err);
+      // } else {
+      //   console.log('Inserted %d documents into the "users" collection. The documents inserted with "_id" are:', result.length, result);
+      // }
          
 
-      //Close connection
-      //console.log("db wat" + collection.find({title:"test 1"}));
-      //db.close();
-    });
+ //      //Close connection
+ //      //console.log("db wat" + collection.find({title:"test 1"}));
+ //      //db.close();
+     //});
     console.log("HERE ARE THE FIND " + userONE);
   }
 });
