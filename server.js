@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 // Serve static files from public/.
 app.use(express.static(path.join(__dirname, 'public')));
 
-var userOne;
+var userONE;
 
 MongoClient.connect(mongoURL, function (err, db) {
   if (err) {
@@ -41,26 +41,47 @@ MongoClient.connect(mongoURL, function (err, db) {
 
     // Get the documents collection
     var collection = db.collection('sheeatsburgers');
+    userONE = collection.find();
 
-    //Create some users
-    //var user1 = {title: 'test 1', description: 'yo test 1 mic check', author: 'yo dog'};
-    //var user2 = {title: 'test 2', description: 'biscuits and gravy', author: 'good eattin'};
-    //var user3 = {title: 'test 3', description: 'happy day', author: 'happy man'};
+//     //Create some users
+    var user1 = {
+  title: "stuff n shit",
+  body: "yeah yeah yeah",
+  user: "big bob",
+  titleColor: "red",
+  bodyColor: "green",
+  footerColor: "red",
+  borderolor: "yellow",
+  comments: ""
+};
+    
+    var user2 = {
+  title: "tootsie rolls",
+  body: "nonono",
+  user: "little bob",
+  titleColor: "green",
+  bodyColor: "red",
+  footerColor: "green",
+  borderolor: "pink",
+  comments: ""
+};
 
     // Insert some users
-    //collection.insert([user1, user2, user3], function (err, result) {
-userONE = collection.find({title:"please work"})      
-//userONE = collection.find().sort({title:1}).limit(50);
-      //if (err) {
-      //  console.log(err);
-      //} else {
-      //  console.log('Inserted %d documents into the "users" collection. The documents inserted with "_id" are:', result.length, result);
-      //}
+    collection.insert([user1, user2], function (err, result) {
+          
+ //userONE = collection.find().sort({title:1}).limit(50);
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('Inserted %d documents into the "users" collection. The documents inserted with "_id" are:', result.length, result);
+      }
+         
+
       //Close connection
       //console.log("db wat" + collection.find({title:"test 1"}));
       //db.close();
-    //});
-    console.log("HERE ARE THE FIND" + userONE);
+    });
+    console.log("HERE ARE THE FIND " + userONE);
   }
 });
 
@@ -71,7 +92,7 @@ userONE = collection.find({title:"please work"})
 // Render the index page for the root URL path ('/').
 app.get('/', function (req, res) {
   res.render('index-page', {
-    pageTitle: userONE
+    db: userONE
   });
 });
 

@@ -4,9 +4,9 @@ FORMAT for Thread db objects:
 	title: ,
 	body: ,
 	user: ,
-	title-color: ,
-	body-color: ,
-	footer-color: ,
-	border-color: ,
+	titleColor: ,
+	bodyColor: ,
+	footerColor: ,
+	borderColor: ,
 	comments: []
 }
