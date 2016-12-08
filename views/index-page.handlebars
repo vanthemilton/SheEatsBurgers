@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Max Moulds Example Website demonstrating elements of a website">
+    <meta name="keywords" content="maxmoulds,template,website,developer,html5,css3,oregon,programmer,HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Max Moulds">    
+  
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<script src="./js/autohidingnavbar.js"></script>
+   
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    
+</head>
+
+<body>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>SheEatsBurgers</h1>      
+    <p>A place for anonymous discussion</p>
+  </div>
+</div>
+    
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="nav-container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">SheEatsBurgers</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Home</a>
+                    </li>
+                    <li><a href="#about">About</a>
+                    </li>
+                    <li><a href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-center new-thread-button">
+                    <li><a href="#">New Thread</a>
+                    </li>
+                </ul>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>    
+
+<div class="container-fluid"> 
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="panel">
+        <div class="panel-heading">Big booties are the only way</div>
+        <div class="panel-body">Little booties go away</div>
+        <div class="panel-footer text-center">posted by username</div>
+      </div>
+    </div>
+    <div class="col-xs-4"> 
+      <div class="panel">
+        <div class="panel-heading">Anyone ever read Candide?</div>
+        <div class="panel-body">Thoughts?</div>
+        <div class="panel-footer text-center">posted by username</div>
+      </div>
+    </div>
+    <div class="col-xs-4"> 
+      <div class="panel">
+        <div class="panel-heading">Hotdogs vs Hamburgers. Decide the future of America!</div>
+        <div class="panel-body">We must settle this debate once and for all</div>
+        <div class="panel-footer text-center">posted by username</div>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+<div class="container-fluid">    
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="panel">
+        <div class="panel-heading">how do i talk to girls</div>
+        <div class="panel-body">im scared and ugly</div>
+        <div class="panel-footer text-center">posted by username</div>
+      </div>
+    </div>
+    <div class="col-xs-4"> 
+      <div class="panel">
+        <div class="panel-heading">I LOVE YOU ALL</div>
+        <div class="panel-body">always remember the power of positivity</div>
+        <div class="panel-footer text-center">posted by username</div>
+      </div>
+    </div>
+    <div class="col-xs-4"> 
+      <div class="panel">
+        <div class="panel-heading">BLACK FRIDAY is DUMB</div>
+        <div class="panel-body">you consumerist whores</div>
+        <div class="panel-footer text-center">posted by username</div>
+      </div>
+    </div>
+  </div>
+</div><br><br>
+
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Login to Your Account</h1><br>
+				  <form>
+					<input type="text" name="user" placeholder="Username">
+					<input type="password" name="pass" placeholder="Password">
+					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+				  </form>
+					
+				  <div class="login-help">
+					<a href="#">Register</a> - <a href="#">Forgot Password</a>
+				  </div>
+				</div>
+			</div>
+		  </div>
+
+<footer class="footer container-fluid text-center">
+  <p>SheEatsBurgers Copyright 2016 MILTON-ORRELL-MOULDS Enterprises</p>  
+    
+</footer>
+    
+    </body>
+
+</html>
+    <script>
+        $(document).ready(function() {
+            $("div.navbar-fixed-top").autoHidingNavbar().autoHidingNavbar('setShowOnBottom', false);
+        });
+    </script>   
