@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html>
   <head>
     <meta charset="utf-8">
@@ -17,3 +18,48 @@
   <script src="/index.js"></script>
 
 </html>
+=======
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Max Moulds Example Website demonstrating elements of a website">
+    <meta name="keywords" content="maxmoulds,template,website,developer,html5,css3,oregon,programmer,HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Max Moulds">    
+  
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<script src="./js/autohidingnavbar.js"></script>
+   
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    
+</head>
+
+<body>
+    
+    {{>header}} 
+
+    {{{body}}}
+
+    {{>footer}}
+
+</body>
+
+<script>
+    $(document).ready(function() {
+        $("div.navbar-fixed-top").autoHidingNavbar().autoHidingNavbar('setShowOnBottom', false);
+    });
+</script>
+
+</html>
+>>>>>>> evan
