@@ -41,7 +41,10 @@ MongoClient.connect(mongoURL, function (err, db) {
 
     // Get the documents collection
     var collection = db.collection('sheeatsburgers');
-    userONE = collection.find();
+    collection.find().toArray(function (err, result) {
+      userONE = result;
+      console.log('first item: ', result[0]);
+    });
 
 //     //Create some users
     var user1 = {
