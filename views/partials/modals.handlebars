@@ -1,110 +1,109 @@
-
 <!-- login modal -->
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
         <div class="loginmodal-container">
-          <h1>Login to Your Account</h1><br>
-          <form>
-          <input type="text" name="user" placeholder="Username">
-          <input type="password" name="pass" placeholder="Password">
-          <input type="submit" name="login" class="login loginmodal-submit" value="Login">
-          </form>
+            <h1>Login to Your Account</h1>
+            <br>
+            <form>
+                <input type="text" name="user" placeholder="Username">
+                <input type="password" name="pass" placeholder="Password">
+                <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+            </form>
         </div>
-        </div>
-  </div>
-
+    </div>
+</div>
 
 <!-- make thread button modal -->
 <div class="modal fade" id="create-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h3 class="modal-title" id="myModalLabel">Create a Thread</h3>
-        </div>
-        <form id="submit" action="/submit" method="post" onsubmit="window.location.reload()">
-        <div class="modal-body">
-
-          <h4 class="modal-title" id="myModalLabel">Username</h4>
-<input type="text" name="user">
-<h4 class="modal-title" id="myModalLabel">Title</h4>
-<input type="text" name="title">
-          <h4 class="modal-title" id="myModalLabel">Description</h4>
-          <textarea name="body"></textarea>
-          <div class="row">
-
-            <div class="col-xs-3">
-              <h4 class="modal-title" id="myModalLabel">TBun</h4>
-              <input name="titleColor" type="hidden" id="color_value" value="e5cb7a">
-              <button class="jscolor {valueElement: 'color_value', hash:true}">Pick a color</button>
-            </div>
-            <div class="col-xs-3">
-              <h4 class="modal-title" id="myModalLabel">Patty</h4>
-              <input name="bodyColor" type="hidden" id="color_value2" value="450101">
-              <button class="jscolor {valueElement: 'color_value2', hash:true}">Pick a color</button>
-            </div>
-            <div class="col-xs-3">
-              <h4 class="modal-title" id="myModalLabel">BBun</h4>
-              <input name="footerColor" type="hidden" id="color_value4" value="e5cb7a">
-              <button class="jscolor {valueElement: 'color_value4', hash:true}">Pick a color</button>
-            </div>
-            <div class="col-xs-3">
-              <h4 class="modal-title" id="myModalLabel">Border</h4>
-              <input name="borderColor" type="hidden" id="color_value3" value="f1e0c7">
-              <button class="jscolor {valueElement: 'color_value3', hash:true}">Pick a color</button>
-            </div>
-          </div>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button submit" id="btn-new-thread-confirm" class="btn btn-primary">Save changes</button>
-        </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- open thread modal -->
-    <div class="modal fade-2" id="thread-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <div class="row">
-              <div class="col-xs-10">
-                <h3 class="modal-title" id="myModalLabel">Title</h3>
-              </div>
-              <div class="col-xs-1 col-xs-offset-1">
-                <button type="button" class="close text-right" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
                 </button>
-              </div>
+                <h3 class="modal-title" id="myModalLabel">Create a Thread</h3>
             </div>
-              <div class="col-xs-3 col-xs-offset-9">
-                <h4 class="modal-title text-right" id="myModalLabel" style="color: grey">User   </h4>
-              </div>
-              <div class="col-xs-12">
-                <p>Dsdgosjgkldsfg kjlsdfkjgkljsdfg kljsdfgjkskjd gjksdfjkgjskdfgjk sjdklgfjklsdjlk gkjlzdfg</p>
-              </div>
-          </div>
-          <div class="modal-body">
-            <div class="col-xs-9">
-              <p>Dsdgosjgkldsfg kjlsdfkjgkljsdfg kljsdfgjkskjd gjksdfjkgjskdfgjk sjdklgfjklsdjlk gkjlzdfg</p>
-            </div>
-            <div class="col-xs-3">
-              <h5 class="modal-title text-right" id="myModalLabel" style="color: grey">User   </h5>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <div class="col-xs-9" style="height: 80%">
-                  <textarea></textarea>
-            </div>
-            <div class="col-xs-3">
-              <button type="button" class="btn btn-primary">Sumbit Comment</button>
-            </div>
-          </div>
+            <form id="submit" action="/submit" method="post" onsubmit="window.location.reload()">
+                <div class="modal-body">
+
+                    <h4 class="modal-title" id="myModalLabel">Username</h4>
+                    <input type="text" name="user">
+                    <h4 class="modal-title" id="myModalLabel">Title</h4>
+                    <input type="text" name="title">
+                    <h4 class="modal-title" id="myModalLabel">Description</h4>
+                    <textarea name="body"></textarea>
+                    <div class="row">
+
+                        <div class="col-xs-3">
+                            <h4 class="modal-title" id="myModalLabel">TBun</h4>
+                            <input name="titleColor" type="hidden" id="color_value" value="e5cb7a">
+                            <button class="jscolor {valueElement: 'color_value', hash:true}">Pick a color</button>
+                        </div>
+                        <div class="col-xs-3">
+                            <h4 class="modal-title" id="myModalLabel">Patty</h4>
+                            <input name="bodyColor" type="hidden" id="color_value2" value="450101">
+                            <button class="jscolor {valueElement: 'color_value2', hash:true}">Pick a color</button>
+                        </div>
+                        <div class="col-xs-3">
+                            <h4 class="modal-title" id="myModalLabel">BBun</h4>
+                            <input name="footerColor" type="hidden" id="color_value4" value="e5cb7a">
+                            <button class="jscolor {valueElement: 'color_value4', hash:true}">Pick a color</button>
+                        </div>
+                        <div class="col-xs-3">
+                            <h4 class="modal-title" id="myModalLabel">Border</h4>
+                            <input name="borderColor" type="hidden" id="color_value3" value="f1e0c7">
+                            <button class="jscolor {valueElement: 'color_value3', hash:true}">Pick a color</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button submit" id="btn-new-thread-confirm" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
         </div>
-      </div>
     </div>
+</div>
+
+<!-- open thread modal -->
+<div class="modal fade-2" id="thread-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-xs-10">
+                        <h3 class="modal-title" id="myModalLabel">Title</h3>
+                    </div>
+                    <div class="col-xs-1 col-xs-offset-1">
+                        <button type="button" class="close text-right" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-xs-offset-9">
+                    <h4 class="modal-title text-right" id="myModalLabel" style="color: grey">User   </h4>
+                </div>
+                <div class="col-xs-12">
+                    <p>Dsdgosjgkldsfg kjlsdfkjgkljsdfg kljsdfgjkskjd gjksdfjkgjskdfgjk sjdklgfjklsdjlk gkjlzdfg</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="col-xs-9">
+                    <p>Dsdgosjgkldsfg kjlsdfkjgkljsdfg kljsdfgjkskjd gjksdfjkgjskdfgjk sjdklgfjklsdjlk gkjlzdfg</p>
+                </div>
+                <div class="col-xs-3">
+                    <h5 class="modal-title text-right" id="myModalLabel" style="color: grey">User   </h5>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-xs-9" style="height: 80%">
+                    <textarea></textarea>
+                </div>
+                <div class="col-xs-3">
+                    <button type="button" class="btn btn-primary">Sumbit Comment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
