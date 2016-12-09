@@ -27,48 +27,33 @@
         <form id="submit" action="/submit" method="post">
         <div class="modal-body">
 
-          <h4 class="modal-title" id="myModalLabel">Title</h4>
+          <h4 class="modal-title" id="myModalLabel">Username</h4>
 <input type="text" name="user">
+<h4 class="modal-title" id="myModalLabel">Title</h4>
+<input type="text" name="title">
           <h4 class="modal-title" id="myModalLabel">Description</h4>
           <textarea name="description"></textarea>
           <div class="row">
 
             <div class="col-xs-3">
               <h4 class="modal-title" id="myModalLabel">TBun</h4>
-              <button
-                  class="jscolor{valueElement:null,value:'66ccff'}"
-                  style="border:1px soild #d9d9d9;"
-                  style="border-top:1px solid #c0c0c0;"
-                  name="TBun">
-                  Pick a color
-              </button>
+              <input name="TBun" type="hidden" id="color_value" value="e5cb7a">
+              <button class="jscolor {valueElement: 'color_value'}">Pick a color</button>
             </div>
             <div class="col-xs-3">
               <h4 class="modal-title" id="myModalLabel">Patty</h4>
-              <button
-                  class="jscolor{valueElement:null,value:'66ccff'}"
-                  style="border:1px solid #d9d9d9;"
-                  style="border-top:1px solid #c0c0c0;">
-                  Pick a color
-              </button>
+              <input name="Patty" type="hidden" id="color_value2" value="450101">
+              <button class="jscolor {valueElement: 'color_value2'}">Pick a color</button>
             </div>
             <div class="col-xs-3">
               <h4 class="modal-title" id="myModalLabel">BBun</h4>
-              <button
-                  class="jscolor{valueElement:null,value:'66ccff'}"
-                  style="border:1px solid #d9d9d9;"
-                  style="border-top:1px solid s#c0c0c0;">
-                  Pick a color
-              </button>
+              <input name="BBun" type="hidden" id="color_value" value="e5cb7a">
+              <button class="jscolor {valueElement: 'color_value'}">Pick a color</button>
             </div>
             <div class="col-xs-3">
               <h4 class="modal-title" id="myModalLabel">Border</h4>
-              <button
-                  class="jscolor{valueElement:null,value:'66ccff'}"
-                  style="border:1px solid #d9d9d9;"
-                  style="border-top:1px solid #c0c0c0;">
-                  Pick a color
-              </button>
+              <input name="Border" type="hidden" id="color_value3" value="f1e0c7">
+              <button class="jscolor {valueElement: 'color_value3'}">Pick a color</button>
             </div>
           </div>
 

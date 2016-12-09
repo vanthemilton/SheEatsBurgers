@@ -92,27 +92,31 @@ console.log("FUCK EYA");
    * client know they made a bad request.
    */
 /////////////////////////////////////////////////////////////////////
-console.log(req.body.description);
+//console.log(req.body.description, req.body.title, req.body.BBun);
 if (req.body && req.body.url) {
-    var add_thread = {
-      user: req.body.user,
-      description: req.body.description
-    };
-    var collection = mongoDB.collection('sheeatsburgers');
-    collection.updateOne(
-      { user: req.params.user },
-      { $push: { description: description } },
-      function (err, result) {
-        if (err) {
-          /*
-           * Send an error response if there was a problem inserting the photos
-           * into the DB.
-           */
-          console.log("== Error inserting photo for person (", req.params.description, ") from database:", err);
-          res.status(500).send("Error inserting photo itnto database: " + err);
-        }
-        res.status(200).send();
-      });
+
+    mongoDB.collection('sheeatsburgers').insert([{"title": req.body.title,
+          "body": req.body.description,
+          "user": req.body.user,
+          "titleColor": req.body.TBun,
+          "bodyColor": req.body.Patty,
+          "footerColor": req.body.BBun,
+          "borderColor": req.body.Border,
+          "comments": []}]);
+    // collection.updateOne(
+    //   { user: req.params.user },
+    //   { $push: { description: description } },
+    //   function (err, result) {
+    //     if (err) {
+    //       /*
+    //        * Send an error response if there was a problem inserting the photos
+    //        * into the DB.
+    //        */
+    //       console.log("== Error inserting photo for person (", req.params.description, ") from database:", err);
+    //       res.status(500).send("Error inserting photo itnto database: " + err);
+    //     }
+    //     res.status(200).send();
+    //   });
   } //else {
  //   res.status(400).send("Person photo must have a URL.");
   //}
