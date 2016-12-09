@@ -84,14 +84,16 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 //
 // or       POST: {"name":"foo","color":"red"}  <-- JSON encoding
 
-app.post('/', function (req, res, next) {
-
+app.get('/submit', function (req, res, next) {
+console.log("FUCK EYA"); 
   /*
    * If the POST body contains a photo URL, then add the new photo to the
    * person's photos in the DB and respond with success.  Otherweise, let the
    * client know they made a bad request.
    */
-  if (req.body && req.body.url) {
+/////////////////////////////////////////////////////////////////////  
+
+if (req.body && req.body.url) {
     var add_thread = {
       user: req.body.user,
       description: req.body.description
@@ -106,20 +108,25 @@ app.post('/', function (req, res, next) {
            * Send an error response if there was a problem inserting the photos
            * into the DB.
            */
-          console.log("== Error inserting photo for person (", req.params.person, ") from database:", err);
+          console.log("== Error inserting photo for person (", req.params.description, ") from database:", err);
           res.status(500).send("Error inserting photo itnto database: " + err);
         }
         res.status(200).send();
       });
-  } else {
-    res.status(400).send("Person photo must have a URL.");
-  }
-
+  } //else {
+ //   res.status(400).send("Person photo must have a URL.");
+  //}
+res.render('index-page', {
+    db: userONE
+  });
+//////////////////////////////////////////////////////////////////////////
+//window.location.href="/";
 });
 
 
-app.get('/submit', function (req, res) {
-	console.log("FUCK EYA");  
+app.get('/', function (req, res) {
+
+ 
 res.render('index-page', {
     db: userONE
   });
