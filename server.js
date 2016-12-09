@@ -70,6 +70,7 @@ MongoClient.connect(mongoURL, function (err, db) {
 };
     console.log("HERE ARE THE FIND " + userONE);
   }
+//db.close();
 });
 
 //submit stuff
@@ -85,7 +86,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 // or       POST: {"name":"foo","color":"red"}  <-- JSON encoding
 
 app.post('/submit', function (req, res, next) {
-console.log("FUCK EYA");
+
   /*
    * If the POST body contains a photo URL, then add the new photo to the
    * person's photos in the DB and respond with success.  Otherweise, let the
@@ -93,38 +94,42 @@ console.log("FUCK EYA");
    */
 /////////////////////////////////////////////////////////////////////
 //console.log(req.body.description, req.body.title, req.body.BBun);
-if (req.body && req.body.url) {
+if (req.body && req.body.title && req.body.description) {
+//console.log("=== req.body.description == ", req.body.description);
+//console.log("=== req.body.user == ", req.body.user);
+//   var user3 = {title: 'test 3', description: 'happy day', author: 'happy man'};
+MongoClient.connect(mongoURL, function (err, db) {
+  if (err) {
+    console.log('Unable to connect to the mongoDB server. Error:', err);
+  } else {
+    //HURRAY!! We are connected. :)
+    console.log('Connection established to', mongoURL);
 
-    mongoDB.collection('sheeatsburgers').insert([{"title": req.body.title,
-          "body": req.body.description,
-          "user": req.body.user,
-          "titleColor": req.body.TBun,
-          "bodyColor": req.body.Patty,
-          "footerColor": req.body.BBun,
-          "borderColor": req.body.Border,
-          "comments": []}]);
-    // collection.updateOne(
-    //   { user: req.params.user },
-    //   { $push: { description: description } },
-    //   function (err, result) {
-    //     if (err) {
-    //       /*
-    //        * Send an error response if there was a problem inserting the photos
-    //        * into the DB.
-    //        */
-    //       console.log("== Error inserting photo for person (", req.params.description, ") from database:", err);
-    //       res.status(500).send("Error inserting photo itnto database: " + err);
-    //     }
-    //     res.status(200).send();
-    //   });
-  } //else {
- //   res.status(400).send("Person photo must have a URL.");
-  //}
+    // Get the documents collection
+    var collection = db.collection('sheeatsburgers');
+
+console.log("req.body= ", req.body);
+collection.insert([req.body], function (err, result) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('Inserted %d documents into the "users" collection. The documents inserted with "_id" are:', result.length, result);
+      }
+      //Close connection
+      console.log("db wat" + collection.find({title:"test 1"}));
+      db.close();
+    });
+    console.log("HERE ARE THE FIND");
+}
+});
+
+
 res.render('index-page', {
     db: userONE
   });
-//////////////////////////////////////////////////////////////////////////
-//window.location.href="/";
+
+//res.redirect('/');
+}
 });
 
 
