@@ -94,7 +94,7 @@ app.post('/submit', function (req, res, next) {
    */
 /////////////////////////////////////////////////////////////////////
 //console.log(req.body.description, req.body.title, req.body.BBun);
-if (req.body && req.body.title && req.body.description) {
+if (req.body && req.body.title && req.body.body) {
 //console.log("=== req.body.description == ", req.body.description);
 //console.log("=== req.body.user == ", req.body.user);
 //   var user3 = {title: 'test 3', description: 'happy day', author: 'happy man'};
@@ -115,6 +115,12 @@ collection.insert([req.body], function (err, result) {
       } else {
         console.log('Inserted %d documents into the "users" collection. The documents inserted with "_id" are:', result.length, result);
       }
+      collection.find().toArray(function (err, result) {
+        if(err) {
+          throw err;
+        }
+        userONE = result;
+        });
       //Close connection
       console.log("db wat" + collection.find({title:"test 1"}));
       db.close();
@@ -124,11 +130,7 @@ collection.insert([req.body], function (err, result) {
 });
 
 
-res.render('index-page', {
-    db: userONE
-  });
-
-//res.redirect('/');
+res.redirect('/');
 }
 });
 
