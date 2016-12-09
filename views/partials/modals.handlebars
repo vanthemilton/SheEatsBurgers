@@ -24,11 +24,10 @@
           </button>
           <h3 class="modal-title" id="myModalLabel">Create a Thread</h3>
         </div>
-
+        <form id="submit" action="/submit" method="post">
         <div class="modal-body">
 
           <h4 class="modal-title" id="myModalLabel">Title</h4>
-<form id="submit" action="/submit" method="post">          
 <input type="text" name="user">
           <h4 class="modal-title" id="myModalLabel">Description</h4>
           <textarea name="description"></textarea>
@@ -71,14 +70,14 @@
                   Pick a color
               </button>
             </div>
-</form>
           </div>
 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" id="btn-new-thread-confirm" class="btn btn-primary" action="/submit" method="post" onclick="location.href='submit';">Save changes</button>
+          <button type="button submit" id="btn-new-thread-confirm" class="btn btn-primary">Save changes</button>
         </div>
+        </form>
       </div>
     </div>
   </div>

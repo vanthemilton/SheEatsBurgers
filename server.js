@@ -57,7 +57,7 @@ MongoClient.connect(mongoURL, function (err, db) {
   borderColor: "yellow",
   comments: ""
 };
-    
+
     var user2 = {
   title: "tootsie rolls",
   body: "nonono",
@@ -77,22 +77,22 @@ var bodyParser = require('body-parser')
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
-})); 
+}));
 //app.use(express.json());       // to support JSON-encoded bodies
 //app.use(express.urlencoded()); // to support URL-encoded bodies
 // assuming POST: name=foo&color=red            <-- URL encoding
 //
 // or       POST: {"name":"foo","color":"red"}  <-- JSON encoding
 
-app.get('/submit', function (req, res, next) {
-console.log("FUCK EYA"); 
+app.post('/submit', function (req, res, next) {
+console.log("FUCK EYA");
   /*
    * If the POST body contains a photo URL, then add the new photo to the
    * person's photos in the DB and respond with success.  Otherweise, let the
    * client know they made a bad request.
    */
-/////////////////////////////////////////////////////////////////////  
-
+/////////////////////////////////////////////////////////////////////
+console.log(req.body.description);
 if (req.body && req.body.url) {
     var add_thread = {
       user: req.body.user,
@@ -126,7 +126,7 @@ res.render('index-page', {
 
 app.get('/', function (req, res) {
 
- 
+
 res.render('index-page', {
     db: userONE
   });
