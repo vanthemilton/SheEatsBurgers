@@ -68,33 +68,59 @@ MongoClient.connect(mongoURL, function (err, db) {
   borderColor: "pink",
   comments: ""
 };
-
-    // Insert some users
-    //collection.insert([user1, user2], function (err, result) {
-          
- // //userONE = collection.find().sort({title:1}).limit(50);
-      // if (err) {
-      //   console.log(err);
-      // } else {
-      //   console.log('Inserted %d documents into the "users" collection. The documents inserted with "_id" are:', result.length, result);
-      // }
-         
-
- //      //Close connection
- //      //console.log("db wat" + collection.find({title:"test 1"}));
- //      //db.close();
-     //});
     console.log("HERE ARE THE FIND " + userONE);
   }
 });
 
+//submit stuff
+var bodyParser = require('body-parser')
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
+//app.use(express.json());       // to support JSON-encoded bodies
+//app.use(express.urlencoded()); // to support URL-encoded bodies
+// assuming POST: name=foo&color=red            <-- URL encoding
+//
+// or       POST: {"name":"foo","color":"red"}  <-- JSON encoding
+
+app.post('/', function (req, res, next) {
+
+  /*
+   * If the POST body contains a photo URL, then add the new photo to the
+   * person's photos in the DB and respond with success.  Otherweise, let the
+   * client know they made a bad request.
+   */
+  if (req.body && req.body.url) {
+    var add_thread = {
+      user: req.body.user,
+      description: req.body.description
+    };
+    var collection = mongoDB.collection('sheeatsburgers');
+    collection.updateOne(
+      { user: req.params.user },
+      { $push: { description: description } },
+      function (err, result) {
+        if (err) {
+          /*
+           * Send an error response if there was a problem inserting the photos
+           * into the DB.
+           */
+          console.log("== Error inserting photo for person (", req.params.person, ") from database:", err);
+          res.status(500).send("Error inserting photo itnto database: " + err);
+        }
+        res.status(200).send();
+      });
+  } else {
+    res.status(400).send("Person photo must have a URL.");
+  }
+
+});
 
 
-
-
-// Render the index page for the root URL path ('/').
-app.get('/', function (req, res) {
-  res.render('index-page', {
+app.get('/submit', function (req, res) {
+	console.log("FUCK EYA");  
+res.render('index-page', {
     db: userONE
   });
 });
@@ -106,12 +132,7 @@ app.get('*', function(req, res) {
   });
 });
 
-/*
- * Make a connection to our Mongo database.  We'll use this connection
- * throughout the lifetime of our server app.  If the connection succeeded,
- * save the database to a file-scoped variable and start our server listening
- * on the specified port.
- */
+
 MongoClient.connect(mongoURL, function (err, db) {
   if (err) {
     console.log("== Unable to make connection to MongoDB Database.")

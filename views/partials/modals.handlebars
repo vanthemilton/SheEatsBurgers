@@ -28,7 +28,8 @@
         <div class="modal-body">
 
           <h4 class="modal-title" id="myModalLabel">Title</h4>
-          <input type="text" name="user">
+<form id="submit" action="/submit" method="post">          
+<input type="text" name="user">
           <h4 class="modal-title" id="myModalLabel">Description</h4>
           <textarea name="description"></textarea>
           <div class="row">
@@ -70,12 +71,13 @@
                   Pick a color
               </button>
             </div>
+</form>
           </div>
 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" id="btn-new-thread-confirm" class="btn btn-primary" onclick="addThread();">Save changes</button>
+          <button type="button" id="btn-new-thread-confirm" class="btn btn-primary" action="/submit" method="post" onclick="location.href='submit';">Save changes</button>
         </div>
       </div>
     </div>
