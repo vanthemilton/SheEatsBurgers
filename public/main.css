@@ -219,15 +219,14 @@ body {
 .panel {
   border-color: pink;
 }
-
+*/
 .panel-body {
   background-color: white;
   height = 100%;
+  overflow: hidden;
+ text-overflow: ellipsis;
 }
 
-.panel-heading {
-  background-color: #999999;
-}
 */
 .panel-footer {
   border: 0px;

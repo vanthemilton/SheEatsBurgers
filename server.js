@@ -40,26 +40,6 @@ MongoClient.connect(mongoURL, function(err, db) {
          console.log('first item: ', result[0]);
       });
       //     //Create some users
-      var user1 = {
-         title: "stuff n shit",
-         body: "yeah yeah yeah",
-         user: "big bob",
-         titleColor: "red",
-         bodyColor: "green",
-         footerColor: "red",
-         borderColor: "yellow",
-         comments: ""
-      };
-      var user2 = {
-         title: "tootsie rolls",
-         body: "nonono",
-         user: "little bob",
-         titleColor: "green",
-         bodyColor: "red",
-         footerColor: "green",
-         borderColor: "pink",
-         comments: ""
-      };
       console.log("HERE ARE THE FIND " + userONE);
    }
    //db.close();
