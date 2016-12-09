@@ -1,3 +1,5 @@
+
+// Requires
 var fs = require('fs');
 var path = require('path');
 var express = require('express');
@@ -6,10 +8,8 @@ var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 var app = express();
 var port = process.env.PORT || 3000;
-/*
- * Read info about the MongoDB connection from the environment and use it to
- * form a MongoDB URL.
- */
+
+// Mongo
 var mongoHost = '127.0.0.1';
 var mongoPort = '27017';
 var mongoUser = 'sheeatsburgers';
@@ -18,15 +18,22 @@ var mongoDBName = 'sheeatsburgers';
 var mongoURL = 'mongodb://localhost:27017/sheeatsburgers'
    //'mongodb://' + mongoUser + ':' + mongoPassword + '@' + mongoHost + ':' + mongoPort + '/' + mongoDBName;
 var mongoDB;
+
+// Set up App
 app.engine('handlebars', exphbs({
    defaultLayout: 'main'
 }))
 app.set('view engine', 'handlebars');
 // Parse all request bodies as JSON.
+
 app.use(bodyParser.json());
 // Serve static files from public/.
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+// Connect DB
 var userONE;
+
 MongoClient.connect(mongoURL, function(err, db) {
    if (err) {
       console.log('Unable to connect to the mongoDB server. Error:', err);
@@ -44,6 +51,7 @@ MongoClient.connect(mongoURL, function(err, db) {
    }
    //db.close();
 });
+
 //submit stuff
 var bodyParser = require('body-parser')
 app.use(bodyParser.json()); // to support JSON-encoded bodies
@@ -55,12 +63,9 @@ app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
 // assuming POST: name=foo&color=red            <-- URL encoding
 //
 // or       POST: {"name":"foo","color":"red"}  <-- JSON encoding
+
 app.post('/submit', function(req, res, next) {
-   /*
-    * If the POST body contains a photo URL, then add the new photo to the
-    * person's photos in the DB and respond with success.  Otherweise, let the
-    * client know they made a bad request.
-    */
+  
    /////////////////////////////////////////////////////////////////////
    //console.log(req.body.description, req.body.title, req.body.BBun);
    if (req.body && req.body.title && req.body.body) {
@@ -100,6 +105,7 @@ app.post('/submit', function(req, res, next) {
       res.redirect('/');
    }
 });
+
 app.get('/', function(req, res) {
    res.render('index-page', {
       db: userONE
