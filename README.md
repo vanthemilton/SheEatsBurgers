@@ -1,3 +1,3 @@
-# final-project-team-kag
+# SheEatsBurgers
 
-Anonymous thread posting and answer forum.
+Anonymous thread posting and answer forum with an obnoxius, colorful burger theme. 
